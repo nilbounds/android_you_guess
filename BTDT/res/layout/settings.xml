@@ -1,0 +1,235 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bkgrnd"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/icon"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/settings"
+            android:textColor="@color/title_color"
+            android:textSize="@dimen/screen_title_size"
+            android:shadowColor="@android:color/white"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="10"
+            ></TextView>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/icon" />
+    </RelativeLayout>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            
+			<LinearLayout
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="fill"
+			    android:gravity="fill"
+			    android:orientation="horizontal" >
+
+				<ImageButton
+				    android:id="@+id/ImageButton_Avatar"
+				    android:layout_width="94dp"
+				    android:layout_height="match_parent"
+				    android:adjustViewBounds="true"
+				    android:maxHeight="@dimen/avatar_size"
+				    android:maxWidth="@dimen/avatar_size"
+				    android:onClick="onLaunchCamera"
+				    android:scaleType="fitXY"
+				    android:src="@drawable/avatar" />
+					<LinearLayout 
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:orientation="vertical">
+					    <TextView
+                			android:layout_width="match_parent"
+               				android:layout_height="wrap_content"
+               				android:text="@string/nickname"
+                			android:textSize="@dimen/menu_item_size"
+                			android:typeface="monospace" />
+
+            			<EditText
+            			    android:id="@+id/EditText_NickName"
+            			    android:layout_width="match_parent"
+            			    android:layout_height="wrap_content"
+            			    android:inputType="textPersonName"
+            			    android:maxLength="20"
+            			    android:maxLines="1" />
+					    
+					</LinearLayout>"
+			</LinearLayout>
+			
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:textSize="@dimen/menu_item_size"
+                android:typeface="monospace" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/EditText_Email"
+                android:maxLines="1"
+                android:inputType="textEmailAddress"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/password"
+                android:textSize="@dimen/menu_item_size"
+                android:typeface="monospace" />
+
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_pwd"
+                    android:id="@+id/Button_Password"
+                    android:onClick="onSetPasswordButtonClick"/>
+
+                <TextView
+                    android:id="@+id/TextView_Password_Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/pwd_not_set"
+                    android:textSize="@dimen/menu_item_size"
+                    android:typeface="serif" />
+
+            </LinearLayout>
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dob"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/Button_DOB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_dob" 
+                    android:onClick="onPickDateButtonClick"/>
+
+                <TextView
+                    android:id="@+id/textView_DOB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/menu_item_size"
+                    android:typeface="serif" 
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/gender"
+                android:textSize="@dimen/menu_item_size"
+                android:typeface="serif" />
+
+            <Spinner
+                	android:layout_width="match_parent"
+                	android:layout_height="wrap_content"
+                	android:id="@+id/Spinner_Gender"
+                	android:entries="@array/genders"/>
+            <TextView
+                android:id="@+id/TextView_FavoritePlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_favoriteplace"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button 
+                    android:id="@+id/Button_FavoritePlace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_button_favoriteplace"
+                    android:onClick="onPickPlaceButtonClick"
+                    />
+             	<TextView 
+             	    android:id="@+id/TextView_FavoritePlace_Info"
+             	    android:layout_width="match_parent"
+             	    android:layout_height="wrap_content"
+             	    android:text="@string/settings_favoriteplace_not_set"
+             	    android:textSize="@dimen/help_text_size"
+                    android:textStyle="bold"
+                    android:gravity="center"
+             	    />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_friend_email_label"
+                android:textSize="@dimen/help_text_size"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/Button_Friend_Email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings_button_friend_email"
+                    android:onClick="onAddFriendButtonClick"/>
+                <TextView 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/help_text_size"
+                    android:gravity="center"
+                    android:id="@+id/TextView_Friend_Email_Tip"
+                    android:text="@string/settings_friend_email_tip"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+ </LinearLayout>
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
